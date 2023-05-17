@@ -7,6 +7,11 @@
     <title>Im Here</title>
 </head>
 <body>
-    <h1>Im here</h1>
+    {% for enamel in enamels %}
+        <p>Название: {{ enamel.name }}</p>
+        <p>Основа: {{ enamel.base.name }}</p>
+        <p>Пигментная паста: {{ enamel.pigment_paste.name }}</p>
+        
+    {% endfor %}
 </body>
 </html>
