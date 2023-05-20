@@ -7,6 +7,10 @@ class AdminBase(admin.ModelAdmin):
     pass
 
 
+@admin.register(Analysis)
+class AdminAnalysis(admin.ModelAdmin):
+    pass
+
 @admin.register(PigmentGroup)
 class AdminPigmentGroup(admin.ModelAdmin):
     pass
