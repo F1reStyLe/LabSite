@@ -1,5 +1,28 @@
 {% extends 'lab/base.html' %}
 
 {% block content %}
-    Тут будет описание образца
+<h4>Наименование: {{ sample.name }}</h4>
+<p>Основа: {{ sample.base }}</p>
+<table class="table">
+    <tbody>
+        <tr>
+            <th scope="row">Время</th>
+            {% for analyzes in analysis %}
+                <td>{{ analyzes.time }}</td>
+            {% endfor %}
+          </tr>
+      <tr>
+        <th scope="row">Перетир</th>
+        {% for analyzes in analysis %}
+                <td>{{ analyzes.grid }}</td>
+            {% endfor %}
+      </tr>
+      <tr>
+        <th scope="row">Налив</th>
+        {% for analyzes in analysis %}
+                <td>{{ analyzes.filling }}</td>
+            {% endfor %}
+      </tr>
+    </tbody>
+  </table>
 {% endblock %}
