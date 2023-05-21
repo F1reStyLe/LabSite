@@ -1,11 +1,15 @@
 {% extends 'lab/base.html' %}
 {% block content%}
-<div class="card" style="width: 18rem;">
-    <img src="..." class="card-img-top" alt="...">
+<div class="row">
+{% for sample in samples %}
+<div class="card">
     <div class="card-body">
-      <h5 class="card-title">Заголовок карточки</h5>
-      <p class="card-text">Небольшой пример текста, который должен основываться на названии карточки и составлять основную часть содержимого карты.</p>
-      <a href="#" class="btn btn-primary">Перейти куда-нибудь</a>
+      <h5 class="card-title">Название: {{ sample.name }}</h5>
+      <p class="card-text">Основа: {{ sample.base }}</p>
+      <p class="card-text">Дата производства: {{ sample.production_date }}</p>
+      <a href="{% url 'sample' sample.id  %}" class="btn btn-primary">Подробнее</a>
     </div>
   </div>
+  {% endfor %}
+</div>
 {% endblock %}

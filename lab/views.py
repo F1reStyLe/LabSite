@@ -8,7 +8,7 @@ def index(request):
 
 def sample_list(request):
     samples = PigmentPaste.objects.all()
-    return render(request, template_name='lab/sample_list.html')
+    return render(request, template_name='lab/sample_list.html', context={'samples': samples})
 
 
 def add_sample(request):
@@ -17,7 +17,7 @@ def add_sample(request):
 
 def sample(request, pk):
     sample = PigmentPaste.objects.get(id=pk)    
-    return render(request, template_name='lab/sample.html')
+    return render(request, template_name='lab/sample.html', context={'sample': sample})
 
 
 def contacts(request):
