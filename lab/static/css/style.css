@@ -5,6 +5,10 @@ body {
 }
 
 
+.contacts {
+  width: 100%;
+}
+
 
 .layout_padding {
   padding: 75px 0;
@@ -284,6 +288,7 @@ a:focus {
 /* end slider section */
 .about_section .img-box img {
   width: 100%;
+  color: red;
 }
 
 .about_section .detail-box a {

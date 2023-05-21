@@ -62,9 +62,6 @@
                 <li class="nav-item">
                   <a class="nav-link" href="{% url 'add_sample' %}">Добавить образец</a>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="{% url 'contacts' %}">Наши контакты</a>
-                </li>
               </ul>
             </div>
           </div>
@@ -79,30 +76,6 @@
     
 
   <!-- info section -->
-
-  <section class="info_section layout_padding">
-    <div class="footer_contact">
-      <div class="heading_container">
-        <h2>
-          Contact Us
-        </h2>
-      </div>
-      <div class="box">
-        <a href="" class="img-box">
-          <img src="{% static 'images/location.png' %}" alt="" class="img-1">
-          <img src="{% static 'images/location-o.png' %}" alt="" class="img-2">
-        </a>
-        <a href="" class="img-box">
-          <img src="{% static 'images/call.png' %}" alt="" class="img-1">
-          <img src="{% static 'images/call-o.png' %}" alt="" class="img-2">
-        </a>
-        <a href="" class="img-box">
-          <img src="{% static 'images/envelope.png' %}" alt="" class="img-1">
-          <img src="{% static 'images/envelope-o.png' %}" alt="" class="img-2">
-        </a>
-      </div>
-    </div>
-  </section>
   {% block map %}
   {% endblock %}
 
