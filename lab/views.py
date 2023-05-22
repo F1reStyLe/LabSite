@@ -12,7 +12,9 @@ def sample_list(request):
 
 
 def add_sample(request):
-    return render(request, template_name='lab/sample_list.html')
+    bases = Base.objects.all()
+    pigments = Pigment.objects.all()
+    return render(request, template_name='lab/add_sample.html', context={'bases': bases, 'pigments': pigments,})
 
 
 def sample(request, pk):

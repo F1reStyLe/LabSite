@@ -1,0 +1,55 @@
+{% extends 'lab/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <form method="post" action="">
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Пигментные пасты</label>
+            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Название пигментной пасты">
+        </div>
+        <select class="form-select" aria-label="Default select example">
+            <option selected>Основа</option>
+            {% for base in bases %}
+            <option value="{{ base.id }}">{{ base.name }}</option>
+            {% endfor %}
+            
+        </select>
+        <select class="form-select" aria-label="Default select example">
+            <option selected>Пигмент</option>
+            {% for pigment in pigments %}
+            <option value="{{ pigment.id }}">{{ pigment.name }}</option>
+            {% endfor %}
+        </select>
+        <a href="#" class="btn btn-primary">Добавить</a>
+    </form>
+    <form method="post" action="">
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Пигмент</label>
+            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Название пигмента">
+        </div>
+        <a href="#" class="btn btn-primary">Добавить</a>
+    </form>
+    <form method="post" action="">
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Эмаль</label>
+            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Название эмали">
+        </div>
+        <select class="form-select" aria-label="Default select example">
+            <option selected>Основа</option>
+            {% for base in bases %}
+            <option value="{{ base.id }}">{{ base.name }}</option>
+            {% endfor %}
+            
+        </select>
+        <select class="form-select" aria-label="Default select example">
+            <option selected>Пигмент</option>
+            {% for pigment in pigments %}
+            <option value="{{ pigment.id }}">{{ pigment.name }}</option>
+            {% endfor %}
+        </select>
+        <a href="#" class="btn btn-primary">Добавить</a>
+    </form>
+</div>
+
+{% endblock %}
