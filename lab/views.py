@@ -14,15 +14,12 @@ def sample_list(request):
 
 def add_sample(request):
     if request.method == 'POST':
-        print(f'was here {request.POST}')
-
         form = PigmentPasteForm(request.POST)
         if form.is_valid():
             print('valid')
             form.save()
             return render(request, template_name='lab/add_sample.html')
     else:
-        print('and here')
         form = PigmentPasteForm()
     return render(request, template_name='lab/add_sample.html', context={'form': form})
 
@@ -36,4 +33,9 @@ def sample(request, pk):
 def contacts(request):
     
     return render(request, template_name='lab/contacts.html')
+
+
+def login(request):
+
+    return render(request, template_name='lab/login.html')
 
