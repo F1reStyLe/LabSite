@@ -68,8 +68,8 @@ class PigmentPaste(models.Model):
     name = models.CharField(max_length=100, db_index=True, verbose_name='Наименование пигментной пасты')
     analyzes = models.ForeignKey(Analysis, null=True, blank=True, on_delete=models.CASCADE, verbose_name='Результаты испытаний')
     production_date = models.DateTimeField(auto_now_add=True, verbose_name='Дата изготовления')
-    base = models.OneToOneField(Base, on_delete=models.SET_NULL, null=True, verbose_name='Основа')
-    pigment = models.OneToOneField(Pigment, on_delete=models.SET_NULL, null=True, verbose_name='Пигмент')
+    base = models.ForeignKey(Base, on_delete=models.SET_NULL, null=True, verbose_name='Основа')
+    pigment = models.ForeignKey(Pigment, on_delete=models.SET_NULL, null=True, verbose_name='Пигмент')
 
     def __str__(self) -> str:
         return self.name
@@ -84,7 +84,7 @@ class Enamel(models.Model):
     """Эмаль"""
     name = models.CharField(max_length=100, db_index=True, verbose_name='Наименование эмали')
     colour = models.CharField(max_length=100, verbose_name='Цвет')
-    base = models.OneToOneField(Base, on_delete=models.SET_NULL, null=True, verbose_name='Основа')
+    base = models.ForeignKey(Base, on_delete=models.SET_NULL, null=True, verbose_name='Основа')
     pigment_paste = models.ForeignKey(PigmentPaste, on_delete=models.SET_NULL, null=True, verbose_name='Пигментная паста')
 
     def __str__(self) -> str:

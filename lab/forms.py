@@ -17,4 +17,4 @@ class PigmentForm(forms.ModelForm):
 class Enamel(forms.ModelForm):
     class Meta:
         model = Enamel
-        fields = ('name', 'color', 'base', 'pigment_paste')
+        fields = ('name', 'colour', 'base', 'pigment_paste',)

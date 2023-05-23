@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import *
+from .forms import *
 
 def index(request):
 
@@ -12,9 +13,18 @@ def sample_list(request):
 
 
 def add_sample(request):
-    bases = Base.objects.all()
-    pigments = Pigment.objects.all()
-    return render(request, template_name='lab/add_sample.html', context={'bases': bases, 'pigments': pigments,})
+    if request.method == 'POST':
+        print(f'was here {request.POST}')
+
+        form = PigmentPasteForm(request.POST)
+        if form.is_valid():
+            print('valid')
+            form.save()
+            return render(request, template_name='lab/add_sample.html')
+    else:
+        print('and here')
+        form = PigmentPasteForm()
+    return render(request, template_name='lab/add_sample.html', context={'form': form})
 
 
 def sample(request, pk):
