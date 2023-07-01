@@ -3,7 +3,8 @@
 
 
 {% block content %}
-<form>
+<form method='post'>
+    {% csrf_token %}
     <h2>Авторизация</h2>
     <div class="container">
       <label for="email">Email:</label>
