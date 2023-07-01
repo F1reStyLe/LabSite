@@ -1,0 +1,20 @@
+{% extends 'lab/base.html' %}
+{% load static %}
+
+
+{% block content %}
+<form action={% url 'login' %} method='post'>
+    {% csrf_token %}
+    <h2>Авторизация</h2>
+    <div class="container">
+      <label for="{{ form.username.id_for_label }}">Логин:</label>
+      {{ form.username }}
+
+      <label for="{{ form.password.id_for_label }}">Пароль:</label>
+      {{ form.password }}
+
+      <button type="submit">Войти</button>
+    </div>
+  </form>
+{% endblock %}
+

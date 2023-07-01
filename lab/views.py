@@ -34,8 +34,3 @@ def contacts(request):
     
     return render(request, template_name='lab/contacts.html')
 
-
-def login(request):
-
-    return render(request, template_name='lab/login.html')
-
